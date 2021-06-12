@@ -73,8 +73,8 @@ const h = () => {
   const arr = expression.split('')
   if (expression.length === 0) return 'não tem nada pra validar aqui!'
   if (arr.some(letter => letter !== '1' && letter !== '0')) return 'cadeia só deve ter 0s e 1s'
-
-  
+  let count = 0
+  arr.forEach(letter => letter == 1 ? count++)
 }
 
-console.log(g())
+console.log(h())
