@@ -69,12 +69,12 @@ const g = () => {
 
 // h - todas as cadeias que contenham exatamente quatro 1s;
 const h = () => {
-  const expression = '010101001010'
+  const expression = '010101000'
   const arr = expression.split('')
+  console.log(arr)
   if (expression.length === 0) return 'não tem nada pra validar aqui!'
   if (arr.some(letter => letter !== '1' && letter !== '0')) return 'cadeia só deve ter 0s e 1s'
   let count = 0
-  arr.forEach(letter => letter == 1 ? count++)
+  arr.forEach(letter => letter == 1 ? count++ : false)
+  return count >= 4 ? 'cadeia valida' : 'cadeia invalida'
 }
-
-console.log(h())
