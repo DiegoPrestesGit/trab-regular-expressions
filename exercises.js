@@ -76,3 +76,9 @@ const h = () => {
   arr.forEach(letter => letter == 1 ? count++ : false)
   return count === 4 ? 'cadeia valida' : 'cadeia invalida'
 }
+
+console.log('exercício a:', a())
+console.log('exercício b:', b())
+console.log('exercício c:', c())
+console.log('exercício g:', g())
+console.log('exercício h:', h())
