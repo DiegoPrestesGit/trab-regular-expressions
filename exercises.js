@@ -13,7 +13,7 @@ const a = () => {
 
 // b - com número ímpar de ocorrências do padrão 00;
 const b = () => {
-  const expression = '0000'
+  const expression = '000000'
   const arr = expression.split('')
   if (expression.length === 0) return 'não tem nada pra validar aqui!'
   if (arr.some(letter => letter !== '1' && letter !== '0')) return 'cadeia só deve ter 0s e 1s'
@@ -41,7 +41,6 @@ const c = () => {
 
   let count = 0
   for (let i = 0; i < arr.length;) {
-    console.log(arr)
     if (arr[i] == 1 && arr[i + 1] == 0 && arr[i + 2] == 1) { // observacao de javascript sobre array aqui
       count++
       arr.splice(i, 3)
@@ -69,18 +68,11 @@ const g = () => {
 
 // h - todas as cadeias que contenham exatamente quatro 1s;
 const h = () => {
-  const expression = '010101000'
+  const expression = '01101010'
   const arr = expression.split('')
-  console.log(arr)
   if (expression.length === 0) return 'não tem nada pra validar aqui!'
   if (arr.some(letter => letter !== '1' && letter !== '0')) return 'cadeia só deve ter 0s e 1s'
   let count = 0
   arr.forEach(letter => letter == 1 ? count++ : false)
-  return count >= 4 ? 'cadeia valida' : 'cadeia invalida'
+  return count === 4 ? 'cadeia valida' : 'cadeia invalida'
 }
-
-console.log(a())
-console.log(b())
-console.log(c())
-console.log(h())
-console.log(g())
