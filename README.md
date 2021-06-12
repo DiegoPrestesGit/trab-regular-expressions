@@ -10,4 +10,4 @@
 - f - as cadeias 0110 e 1001;
 - g - todas as cadeias que começam com 01 e terminam com 10;
 - h - todas as cadeias que contenham exatamente quatro 1s;
-- i  - a cadeia nula e 001;
+- i - a cadeia nula e 001;
