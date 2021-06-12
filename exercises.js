@@ -36,5 +36,24 @@ const b = () => {
 }
 
 // c - com pelo menos duas ocorrências do padrão 101;
+const c = () => {
+  const expression = '001011101'
+  const arr = expression.split('')
+  if (expression.length === 0) return 'não tem nada pra validar aqui!'
+  if (arr.some(letter => letter !== '1' && letter !== '0')) return 'cadeia só deve ter 0s e 1s'
 
-console.log(b())
+  let count = 0
+  for (let i = 0; i < arr.length;) {
+    console.log(arr, count)
+    if (arr[i] == 0 && arr[i + 1] == 0 && arr[i + 2] == 1) { // observacao de javascript sobre array aqui
+      count++
+      arr.splice(i, 3)
+    }else{
+      i++
+    }
+  }
+
+  return count >= 2 ? 'cadeia valida' : 'cadeia invalida'
+}
+
+console.log(c())
