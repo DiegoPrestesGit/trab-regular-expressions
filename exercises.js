@@ -46,7 +46,7 @@ const c = () => {
       count++
       arr.splice(i, 3)
       i = 0
-    }else{
+    } else {
       i++
     }
   }
@@ -54,4 +54,25 @@ const c = () => {
   return count >= 2 ? 'cadeia valida' : 'cadeia invalida'
 }
 
-console.log(c())
+// g - todas as cadeias que começam com 01 e terminam com 10;
+const g = () => {
+  const expression = '010101001010'
+  const arr = expression.split('')
+  if (expression.length === 0) return 'não tem nada pra validar aqui!'
+  if (arr.some(letter => letter !== '1' && letter !== '0')) return 'cadeia só deve ter 0s e 1s'
+
+  return arr[0] == 0 && 
+  arr[1] == 1 && 
+  arr[arr.length-2] == 1 && 
+  arr[arr.length-1] == 0 ? 'cadeia valida' : 'cadeia invalida'
+}
+
+// h - todas as cadeias que contenham exatamente quatro 1s;
+const h = () => {
+  const expression = '010101001010'
+  const arr = expression.split('')
+  if (expression.length === 0) return 'não tem nada pra validar aqui!'
+  if (arr.some(letter => letter !== '1' && letter !== '0')) return 'cadeia só deve ter 0s e 1s'
+}
+
+console.log(g())
