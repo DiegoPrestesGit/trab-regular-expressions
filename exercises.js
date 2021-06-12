@@ -13,20 +13,28 @@ const a = () => {
 
 // b - com número ímpar de ocorrências do padrão 00;
 const b = () => {
-  const expression = '00000010000'
+  const expression = '0000'
   const arr = expression.split('')
   if (expression.length === 0) return 'não tem nada pra validar aqui!'
   if (arr.some(letter => letter !== '1' && letter !== '0')) return 'cadeia só deve ter 0s e 1s'
 
   let count = 0
-  for (let i = 0; i < arr.length; i++) {
-    if(arr[i] == 0 && arr[i+1] == 0) { // observacao de javascript sobre array aqui
+  for (let i = 0; i < arr.length;) {
+    console.log(arr)
+    if (arr[i] == 0 && arr[i + 1] == 0) {
+      console.log(i)
       count++
-      arr.splice(i, 1)
+      arr.splice(i, 2)
+      i = 0
+    } else {
+      i++
     }
+    console.log('iii', i)
   }
 
   return count & 1 ? 'cadeia valida' : 'cadeia invalida'
 }
+
+// c - com pelo menos duas ocorrências do padrão 101;
 
 console.log(b())
