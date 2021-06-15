@@ -22,7 +22,7 @@ const b = () => {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == 0 && arr[i + 1] == 0) {
       count++
-      i + 2
+      i += 2
     }
   }
 
@@ -30,26 +30,22 @@ const b = () => {
 }
 
 // c - com pelo menos duas ocorrências do padrão 101;
-const c = () => {
-  const expression = '00110101'
-  const arr = expression.split('')
-  if (expression.length === 0) return 'não tem nada pra validar aqui!'
-  if (arr.some(letter => letter !== '1' && letter !== '0')) return 'cadeia só deve ter 0s e 1s'
+// const c = () => {
+//   const expression = '00110101'
+//   const arr = expression.split('')
+//   if (expression.length === 0) return 'não tem nada pra validar aqui!'
+//   if (arr.some(letter => letter !== '1' && letter !== '0')) return 'cadeia só deve ter 0s e 1s'
 
-  let count = 0
-  for (let i = 0; i < arr.length;) {
-    if (arr[i] == 1 && arr[i + 1] == 0 && arr[i + 2] == 1) { // observacao de javascript sobre array aqui
-      console.log(arr)
-      count++
-      arr.splice(i, 3)
-      i = 0
-    } else {
-      i++
-    }
-  }
+//   let count = 0
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] == 1 && arr[i + 1] == 0 && arr[i + 2] == 1) {
+//       count++
+//       i += 3
+//     }
+//   }
 
-  return count >= 2 ? 'cadeia valida' : 'cadeia invalida'
-}
+//   return count >= 2 ? 'cadeia valida' : 'cadeia invalida'
+// }
 
 // g - todas as cadeias que começam com 01 e terminam com 10;
 const g = () => {
