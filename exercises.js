@@ -13,19 +13,16 @@ const a = () => {
 
 // b - com número ímpar de ocorrências do padrão 00;
 const b = () => {
-  const expression = '00100101010010'
+  const expression = '0010010101001010'
   const arr = expression.split('')
   if (expression.length === 0) return 'não tem nada pra validar aqui!'
   if (arr.some(letter => letter !== '1' && letter !== '0')) return 'cadeia só deve ter 0s e 1s'
 
   let count = 0
-  for (let i = 0; i < arr.length;) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] == 0 && arr[i + 1] == 0) {
       count++
-      arr.splice(i, 2)
-      i = 0
-    } else {
-      i++
+      i + 2
     }
   }
 
@@ -79,7 +76,7 @@ const h = () => {
 }
 
 // console.log('exercício a:', a())
-// console.log('exercício b:', b())
-console.log('exercício c:', c())
+console.log('exercício b:', b())
+// console.log('exercício c:', c())
 // console.log('exercício g:', g())
 // console.log('exercício h:', h())
