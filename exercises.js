@@ -1,6 +1,6 @@
 // a - com número par de 1s e 0s;
 const a = () => {
-  const expression = '1001'
+  const expression = '1100010'
   const arr = expression.split('')
   if (expression.length === 0) return 'não tem nada pra validar aqui!'
   if (arr.some(num => num !== '1' && num !== '0')) return 'cadeia só deve ter 0s e 1s'
@@ -8,12 +8,12 @@ const a = () => {
   const one = arr.filter(num => num === '1')
   const zero = arr.filter(num => num === '0')
 
-  return one.length & 1 && zero.length & 1 ? 'cadeia invalida' : 'cadeia valida'
+  return one.length & 1 || zero.length & 1 ? 'cadeia invalida' : 'cadeia valida'
 }
 
 // b - com número ímpar de ocorrências do padrão 00;
 const b = () => {
-  const expression = '0010010101001010'
+  const expression = '0000'
   const arr = expression.split('')
   if (expression.length === 0) return 'não tem nada pra validar aqui!'
   if (arr.some(num => num !== '1' && num !== '0')) return 'cadeia só deve ter 0s e 1s'
@@ -31,7 +31,7 @@ const b = () => {
 
 // c - com pelo menos duas ocorrências do padrão 101;
 const c = () => {
-  const expression = '00110101'
+  const expression = '00010101'
   const arr = expression.split('')
   if (expression.length === 0) return 'não tem nada pra validar aqui!'
   if (arr.some(num => num !== '1' && num !== '0')) return 'cadeia só deve ter 0s e 1s'
@@ -49,7 +49,7 @@ const c = () => {
 
 // g - todas as cadeias que começam com 01 e terminam com 10;
 const g = () => {
-  const expression = '010101001010'
+  const expression = '0110101010001110'
   const arr = expression.split('')
   if (expression.length === 0) return 'não tem nada pra validar aqui!'
   if (arr.some(num => num !== '1' && num !== '0')) return 'cadeia só deve ter 0s e 1s'
@@ -62,7 +62,7 @@ const g = () => {
 
 // h - todas as cadeias que contenham exatamente quatro 1s;
 const h = () => {
-  const expression = '01101010'
+  const expression = '011010'
   const arr = expression.split('')
   if (expression.length === 0) return 'não tem nada pra validar aqui!'
   if (arr.some(num => num !== '1' && num !== '0')) return 'cadeia só deve ter 0s e 1s'
